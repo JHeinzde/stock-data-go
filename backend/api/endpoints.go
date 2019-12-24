@@ -1,12 +1,13 @@
 package api
 
 import (
+	"github.com/JHeinzde/stock-data-go/backend/database"
 	"github.com/gin-gonic/gin"
 	"log"
 )
 
 func GetActiveStocks(c *gin.Context) {
-	c.JSON(200, LoadFile())
+	c.JSON(200, database.GetAllStocks(c))
 }
 
 func AddNewImportTarget(c *gin.Context) {
@@ -14,19 +15,20 @@ func AddNewImportTarget(c *gin.Context) {
 	err := c.BindJSON(&body)
 
 	if err != nil {
-		c.JSON(500, gin.H{"message": "could not parse json body"})
+		c.JSON(500, gin.H{"message": "Could not parse json body"})
 		return
 	}
 
 	symbol := body.Symbol
-	AddLineToFile(symbol)
-	log.Println("WTF")
+	database.InsertStock(symbol, c)
 
-	c.JSON(200, gin.H{"message": "success"})
+	c.JSON(200, gin.H{"message": "Success"})
 }
 
 func StartAndServeAPI() {
-	r := gin.Default()
+	r := gin.New()
+	r.Use(gin.Recovery())
+	r.Use(TransactionHandler)
 
 	r.GET("/stocks", GetActiveStocks)
 	r.POST("/stocks", AddNewImportTarget)
