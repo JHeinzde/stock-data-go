@@ -1,4 +1,4 @@
-module github.com/JHeinzde/stock-data-go/stock-data-go/importer
+module github.com/JHeinzde/stock-data-go/backend/importer
 
 go 1.13
 

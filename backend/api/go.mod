@@ -1,4 +1,4 @@
-module github.com/JHeinzde/stock-data-go/api
+module github.com/JHeinzde/stock-data-go/backend/api
 
 go 1.13
 
