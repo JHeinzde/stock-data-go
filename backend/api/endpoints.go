@@ -30,6 +30,7 @@ func StartAndServeAPI() {
 	r.Use(gin.Recovery())
 	r.Use(TransactionHandler)
 
+	log.Println("Test")
 	r.GET("/stocks", GetActiveStocks)
 	r.POST("/stocks", AddNewImportTarget)
 	log.Fatalln(r.Run("0.0.0.0:8089"))
