@@ -103,6 +103,7 @@ fabric.properties
 
 # Sonarlint plugin
 .idea/**/sonarlint/
+.idea/**
 
 # SonarQube Plugin
 .idea/**/sonarIssues.xml
@@ -120,3 +121,8 @@ npm-debug.log
 yarn-error.log
 
 # End of https://www.gitignore.io/api/go,vuejs,intellij
+/frontend/.idea/sonarlint/issuestore/0/7/07f886859652bdac6e57b790c40e8d9ef0a0721e
+/frontend/.idea/sonarlint/issuestore/8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+/frontend/.idea/sonarlint/issuestore/5/4/5441d5289c77ce615f0e420c266cdee5d78f3ecd
+/frontend/.idea/sonarlint/issuestore/f/4/f43ecdf8d666ee908aacce037b4cd72159e4741b
+/.idea/vcs.xml

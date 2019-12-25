@@ -11,7 +11,7 @@ func GetActiveStocks(c *gin.Context) {
 }
 
 func AddNewImportTarget(c *gin.Context) {
-	var body = StockSymbol{}
+	var body = Stock{}
 	err := c.BindJSON(&body)
 
 	if err != nil {

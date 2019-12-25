@@ -1,8 +1,5 @@
 package api
 
-type StockSymbol struct {
+type Stock struct {
 	Symbol string `json:"Symbol"`
-}
-
-type User struct {
 }

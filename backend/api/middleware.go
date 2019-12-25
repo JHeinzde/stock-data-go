@@ -2,9 +2,9 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/sqlite"
 )
-import "github.com/jinzhu/gorm"
-import _ "github.com/jinzhu/gorm/dialects/sqlite"
 
 func TransactionHandler(c *gin.Context) {
 	db, err := gorm.Open("sqlite", "/tmp/stock.db")
